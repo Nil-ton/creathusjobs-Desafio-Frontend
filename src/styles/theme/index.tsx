@@ -16,6 +16,7 @@ export const theme = {
         }
     },
     fontFamily: {
-        primary: 'Arial, Helvetica, sans-serif'
+        primary: 'Arial, Helvetica, sans-serif',
+        secondary: "'Rajdhani', sans-serif"
     }
 }
