@@ -4,21 +4,29 @@ import { theme } from "../../styles/theme";
 export const WrapperMain = styled.div`
 
     .grid {
+        width: 100%;
+        max-width: 1192px;
         display: flex;
         flex-wrap: wrap;
-        gap: 50px;
-        margin-left: 10%;
-        margin-right: 10%;
+        gap: 30px;
         justify-content: center;
+        margin: 0 auto; 
     }
 
-    h2 {
+    .curso-text {
+        width: 100%;
         font-family: ${theme.fontFamily.primary};
         font-size: 30px;
-        margin-left: 13%;
         margin-top: 48px;
-        margin-bottom: 50px;
     }
+
+    @media (max-width: 1192px) {
+        .curso-text {
+            margin: 48px 1rem 1rem 1rem;
+        }
+    }
+
+
 
     .card-cursos {
         width: 275px;
@@ -223,6 +231,20 @@ export const WrapperMain = styled.div`
         font-size: 20px;
         font-family: ${theme.fontFamily.primary};
         box-shadow: 0px 2px 4px 0px #00000029;
+        cursor: pointer;
+    }
+
+
+
+
+
+
+    .ver-mais {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 42px;
+        font-family: ${theme.fontFamily.primary};
     }
 
 

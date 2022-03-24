@@ -11,14 +11,20 @@ import { format } from 'date-fns'
 export function Main() {
     const { data } = useFetch()
 
+    const handleBtnNavigate = (href: string) => {
+        window.location.href = href
+    }
+
 
     return (
         <WrapperMain>
-            <h2>Cursos</h2>
             <div className="grid">
+                <div className="curso-text">
+                    <h2>Cursos</h2>
+                </div>
 
                 {data?.map((item, i) => (
-                    <div key={item.title + i} className={`card-cursos`} data-testid = "card-cursos">
+                    <div key={item.title + i} className={`card-cursos`} data-testid="card-cursos">
                         <div className="section-label">
                             <div className="track">
                                 <p>TRILHA</p><p>{item.track.toUpperCase()}</p>
@@ -58,7 +64,11 @@ export function Main() {
                             <div className="wrapper-aulas">
                                 <img src={iconDate} alt="" />
                                 <div className="format-aulas">
-                                    <p>{(Math.abs(new Date(item.endDate).getTime() - new Date(item.startTime).getTime()) / 1000 / 60 / 60).toFixed()}h</p>
+                                    <p>{
+                                        (item.events.reduce((total, item) => {
+                                            return new Date(item.endTime).getTime() - new Date(item.startTime).getTime() + total
+                                        },0) / 1000 / 60 / 60).toFixed()
+                                    }H</p>
                                     <p>TOTAL</p>
                                 </div>
                             </div>
@@ -69,9 +79,9 @@ export function Main() {
                                 <img src={iconperson} alt="" />
                                 <div className="format-pessoa">
                                     <p className="name">{
-                                        item.speakers.toString().length > 46 
-                                        ?`${item.speakers.toString().toUpperCase().substring(0, 45)}...`
-                                        : item.speakers.toString().toUpperCase()
+                                        item.speakers.toString().length > 46
+                                            ? `${item.speakers.toString().toUpperCase().substring(0, 45)}...`
+                                            : item.speakers.toString().toUpperCase()
                                     }</p>
                                 </div>
                             </div>
@@ -84,17 +94,18 @@ export function Main() {
                         </div>
 
 
-                        <div className = 'inscrição'>
+                        <div className='inscrição'>
                             <p>INSCRIÇÃO A PARTIR DE {format(new Date(item.enrollmentsStart), "dd/MM")}</p>
                         </div>
 
 
 
-                        <button>Página do curso</button>
-
-
+                        <button onClick={() => handleBtnNavigate(item.detailsURL)}>Página do curso</button>
                     </div>
                 ))}
+                <div className='ver-mais'>
+                    <p>Ver mais</p>
+                </div>
             </div>
         </WrapperMain>
     )

@@ -1,10 +1,6 @@
-import {render, waitFor} from '@testing-library/react'
-import { QueryClientProvider } from 'react-query'
 import { Main } from '.'
-import { queryClient } from '../../services/queryClient'
-import { rest } from 'msw'
 import { renderWithClient } from '../../test/utils' 
-import { server } from '../../test/setup'
+
 
 
 describe('Main Component', () => {
