@@ -35,7 +35,7 @@ npm run dev
 - Utilizar o styled-component para estilizar os components da aplicação
 - Utilizar o Date-fns para facilitar o manuseio de datas. 
 
-## O que eu sei sobreo desafio
+## O que eu sei sobre o desafio
 - SVG do layout(utilizar o figma para obter as informaçoes do layout)
 - E as informaçoes do grid(utilizar o React query e o axios para capturar as informações do grid)
 
