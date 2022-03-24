@@ -21,7 +21,7 @@ export function Main() {
                     <div key={item.title + i} className={`card-cursos`} data-testid = "card-cursos">
                         <div className="section-label">
                             <div className="track">
-                                <p>Trilha</p><p>{item.track}</p>
+                                <p>TRILHA</p><p>{item.track.toUpperCase()}</p>
                             </div>
                             <img src={androidImg} alt="simbolo do android - robozinho com uma anteninha na cabeça e um pentágono azul" />
                         </div>

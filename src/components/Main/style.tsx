@@ -36,6 +36,8 @@ export const WrapperMain = styled.div`
     .track {
         display: flex;
         gap: 3.18px;
+        font-family: ${theme.fontFamily.primary};
+        font-size: 13px;
     }
 
     .track > p:nth-child(2) {
@@ -99,7 +101,7 @@ export const WrapperMain = styled.div`
     .aulas {
         display: flex;
         justify-content: space-between;
-        margin-right: 6%;
+        margin-right: 20px;
         padding-bottom: 40px;
     }
 
@@ -138,7 +140,7 @@ export const WrapperMain = styled.div`
     .pessoa {
         display: flex;
         justify-content: space-between;
-        margin-right: 6%;
+        margin-right: 10px;
     }
 
     .wrapper-pessoa {
@@ -193,6 +195,20 @@ export const WrapperMain = styled.div`
         font-size: 12px;
         font-family: ${theme.fontFamily.primary};
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,12 +1,19 @@
-import {render} from '@testing-library/react'
+import {render, waitFor} from '@testing-library/react'
+import { QueryClientProvider } from 'react-query'
 import { Main } from '.'
+import { queryClient } from '../../services/queryClient'
+import { rest } from 'msw'
+import { renderWithClient } from '../../test/utils' 
+import { server } from '../../test/setup'
+
 
 describe('Main Component', () => {
 
-    it('should render h2 cursos', () => {
-        const {getByText} = render(<Main/>)
+    it('should render cursos', async () => {
+        const result = renderWithClient(<Main />)
+        
 
-        expect(getByText('Cursos')).toBeInTheDocument()
+        expect(await result.findByText('Cursos')).toBeInTheDocument()
     })
 
 
@@ -14,25 +21,13 @@ describe('Main Component', () => {
 
 
 
-
-
-
-    it('should render cursos text', () => {
-        const {getByText} = render(<Main />)
-
-        expect(getByText('Cursos')).toBeInTheDocument()
-    })
-
-
-
-
-
-
-
-    
 
     it('should render card-cursos', async () => {
-        const {findAllByTestId} = render(<Main />)
-        expect(await findAllByTestId("card-cursos")).toBeInTheDocument()
+        const result = renderWithClient(<Main />)
+        const elements = await result.findAllByTestId('card-cursos')
+
+        for(const element of elements) {
+            expect(element).toBeInTheDocument()
+        }
     })
 })
