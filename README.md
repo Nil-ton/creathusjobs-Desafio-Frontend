@@ -1,4 +1,20 @@
 # creathusjobs/Desafio Frontend.md
+## Start da aplicação
+Clone o repositório.
+```
+git clone https://github.com/Nil-ton/creathusjobs-Desafio-Frontend.git
+```
+Instale as dependencias.
+```
+npm install
+```
+
+Start da aplicação como desenvolvedor
+```
+npm run dev
+```
+
+
 ## Bibliotecas
 - React-ts
 - Styled-components
