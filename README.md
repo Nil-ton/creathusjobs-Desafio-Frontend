@@ -14,6 +14,11 @@ Start da aplicação como desenvolvedor
 npm run dev
 ```
 
+## Teste da aplicação 
+```
+npm run test
+```
+
 
 ## Bibliotecas
 - React-ts
